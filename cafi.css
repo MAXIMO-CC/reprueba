@@ -1,0 +1,957 @@
+    /* ==== RESETEO GENERAL ==== */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+    /* ============================== */
+    /* ======== HEADER GENERAL ====== */
+    /* ============================== */
+    header {
+    width: 100%;
+    height: auto;
+    padding: 17px 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    box-shadow: 0px 4px 18px blue;
+    z-index: 2;
+    }
+
+    header img {
+    width: 60px;
+    }
+
+    /* ===== NAVBAR GENERAL ===== */
+    header .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+    }
+
+    .navbar a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    position: relative;
+    transition: 0.5s;
+    }
+
+    /* === EFECTO DE LINEAS === */
+    .navbar a::before,
+    .navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-bottom: 2px solid blue;
+    transition: width 0.4s ease-in-out;
+    }
+
+    .navbar a::before {
+    left: 0;
+    bottom: -5px;
+    }
+
+    .navbar a::after {
+    right: 0;
+    bottom: -10px;
+    }
+
+    .navbar a:hover::before,
+    .navbar a.active::before {
+    width: 80%;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+    width: 70%;
+    }
+
+    /* ==== REDES SOCIALES ==== */
+    .navbar .enlaces-redes .facebook:hover::after,
+    .navbar .enlaces-redes .facebook:hover::before,
+    .navbar .enlaces-redes .instagram:hover::after,
+    .navbar .enlaces-redes .instagram:hover::before {
+    border: none;
+    outline: none;
+    width: 0;
+    }
+
+    .navbar .enlaces-redes img {
+    width: 22px;
+    margin: 0 10px;
+    }
+
+    /* ====== MENÚ HAMBURGUESA ====== */
+    .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 30;
+    transition: transform 0.3s ease;
+    }
+
+    .menu-toggle span {
+    height: 3px;
+    background: #1cc9d5;
+    border-radius: 2px;
+    transition: 0.3s;
+    }
+
+    /* Estado activo del menú hamburguesa */
+    .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 7px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -8px);
+    }
+
+    /* ========== RESPONSIVE HEADER ========== */
+    @media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 50%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+        display: none;
+        box-shadow: 0 15px 15px rgba(2, 189, 246, 0.815);
+        border-radius: 0 0 20px 20px;
+        transform: translateX(400px);
+        transition: 0.7s;
+    }
+
+    .navbar.active {
+        display: flex;
+        transform: translateX(-1px);
+    }
+
+    .navbar a {
+        width: 100%;
+        padding: 40px 10px;
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar.active a::before,
+    .navbar.active a::after {
+        display: none !important;
+    }
+
+    .navbar .enlaces-redes {
+        padding: 20px 0;
+    }
+    }
+
+    /* ============================== */
+    /* ======== SECCIÓN 1 ========== */
+    /* ============================== */
+
+
+    .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    .container .seccion1 {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+    background: linear-gradient(to left, white 10%, yellow 70%);
+    transition: 0.7s;
+    }
+
+    .container .seccion1 .info-logo {
+    width: 290px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+    .container .seccion1 .cafi {
+    width: 280px;
+    margin-top: 80px;
+    }
+
+    .container .seccion1 p {
+    margin: 0 0 30px 0;
+    font-family: "Cormorant Unicase", serif;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: 900;
+    color: rgb(18, 18, 214);
+    text-shadow: 0 2px 5px cyan;
+    }
+
+    /* ============================== */
+    /* ======== SECCIÓN 2 ========== */
+    /* ============================== */
+    .container .seccion2 {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s;
+    background-image: url(colores.png);
+    background-position: top left;
+    object-fit: cover;
+    gap: 25px;
+    padding-top: 120px;
+    flex-wrap: wrap;
+    }
+
+    /* ============================== */
+    /* ====== BOTÓN ANIMADO ======== */
+    /* ============================== */
+    .btn-conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --color-text: #ffffff;
+    --color-background: #4300FF;
+    --color-outline: #00CAFF;
+    --color-shadow: #ffffff;
+    }
+
+    .btn-content {
+    width: 100%;
+    max-width: 350px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px 35px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 100px;
+    box-shadow: 0 0 0.2em 0 var(--color-background);
+    margin: 0 100px;
+    }
+
+    .btn-content:hover,
+    .btn-content:focus {
+    transition: 0.5s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+    }
+
+    .btn-content .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0;
+    transform: scale(0.6);
+    }
+
+    .btn-content:hover .icon-arrow {
+    margin-right: 25px;
+    }
+
+    .icon-arrow {
+    width: 20px;
+    margin-left: 15px;
+    position: relative;
+    top: 6%;
+    }
+
+    /* Animación de íconos SVG */
+    #arrow-icon-one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+    }
+
+    #arrow-icon-two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+    }
+
+    .btn-content:hover #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+    }
+
+    .btn-content:hover #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+    }
+
+    .btn-content:hover #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+    }
+
+    /* KEYFRAMES PARA ANIMACIONES */
+    @keyframes color_anim {
+    0% { fill: white; }
+    50% { fill: var(--color-background); }
+    100% { fill: white; }
+    }
+
+    @keyframes btn-content {
+    0% {
+        outline: 0.2em solid var(--color-background);
+        outline-offset: 0;
+    }
+    }
+
+    @-webkit-keyframes btn-content {
+    0% {
+        outline: 0.2em solid var(--color-background);
+        outline-offset: 0;
+    }
+    }
+
+
+    .informacion {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        
+    }
+
+    .informacion .info{
+        width: 50%;
+        height: 100%;
+        padding: 60px 90px;
+        
+
+    }
+
+    .info h1{
+        color: transparent;
+        -webkit-text-stroke: 3px  black;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: clamp(1.5rem, 5vw, 3.5rem);
+        margin-bottom: 30px;
+    }
+
+    .info p{
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .info button{
+        margin-top: 30px;
+        padding: 20px 40px;
+        background-color: black;
+        border: none;
+        color: white;
+        font-weight: 800;
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-radius: 22px;
+        border: 3px solid white;
+        box-shadow: 0px 12px 2px black ;
+        transition: .6s;
+    }
+
+    .info button:hover{
+        transform: translate(0, -12px);
+        cursor: pointer;
+        transition: .6s;
+    }
+
+    .info button:active{
+        transform: translate(0, -4px);
+        transition: .6s;
+    }
+
+
+    .informacion .info1{
+        width: 50%;
+        height: 100%;
+        padding: 60px 20px;
+        margin: auto auto;
+    }
+
+    .info1 {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 180px;
+    align-items: center;
+    justify-content: center; /* opcional, para ver el recorte más claro */
+}
+
+
+
+.info1 img:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    border-radius: 45%;
+    box-shadow: 0 0 20px black;
+}
+
+.info1  img:nth-child(2){
+    width: 250px;
+    height: 200px;
+    border-radius: 35px;
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 180px;
+    box-shadow: 0 6px 22px gray;
+}
+
+
+@media (max-width:1081px){
+    .informacion{
+        display: block;
+    }
+
+    .informacion .info{
+        width: 100%;
+        height: 100%;
+        padding: 60px 90px;
+    }
+
+    @media (max-width:478px) {
+        .informacion .info{
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width:912px){
+        .info h1{
+            color: black;
+            font-weight: 400;
+        }
+    }
+
+    .informacion .info1{
+        display: none;
+    }
+
+
+
+}
+
+
+
+/*ESTO ES PARA LA EL DIV(OPCION 4- ENLACES-CAFI)---------------------*/
+
+@media (max-width:1275px) {
+    .opcion4 .enlaces-cafi{
+        flex-wrap: wrap;
+    }
+
+    .apariciones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .apariciones .cuadros-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Esto centra todo horizontalmente */
+  }
+
+  .cuadro {
+    width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  .apariciones .imagen-caf {
+    display: none;
+}
+
+}
+
+
+/*siguiente seccion------------------------------------------------*/
+
+.opcion3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 20px;
+    background-image: url(abstracto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.opcion3 .tarjeta {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.33);
+    padding: 30px 25px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opcion3 .tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.19);
+}
+
+.opcion3 .icono {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #0077cc;
+}
+
+.opcion3 .tarjeta:nth-child(3) img{
+    width: 60px;
+    margin-bottom: -15px;
+}
+
+.opcion3 .tarjeta:nth-child(3) 
+
+.opcion3 h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    color: #222;
+}
+
+.opcion3 p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/*opcion4----------------------------------------------------------*/
+
+.opcion4{
+    width: 100%;
+    height: 100%;
+    padding: 30px 60px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.opcion4 .informacion1{
+    display: flex;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.opcion4 .informacion1 h1{
+    font-size: 48px;
+    margin-bottom: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px black;
+
+}
+
+.opcion4 .informacion1 p{
+    font-size: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.opcion4 .enlaces-cafi{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: .6s;
+    padding-inline: 40px;
+}
+
+.opcion4 .enlaces-cafi img:hover{
+    transform: translate(-10px);
+    transition: .6s;
+}
+
+
+/*opcion5-------------------------------------------------------*/
+
+.opcion5{
+    width: 100%;
+    padding: 35px;
+    text-align: center;
+}
+
+.opcion5 h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: clamp(5rem, 2vw + 0.5rem, 3rem);
+}
+
+.opcion5 p{
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+/*contenedor-----------------------------------------------------*/
+
+    .apariciones{
+        width: 100%;
+        display: flex;
+        margin: auto auto;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        background-color: #00CAFF;
+        box-shadow: inset 0 0 20px white, inset 0 0 50px white;
+        
+    }
+
+    .apariciones .cuadros-info{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+
+        .cuadro {
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+        padding: 35px;
+        width: 100%;
+        max-width: 500px;
+        min-width: 300px;
+        border-radius: 12px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.8s ease-out;
+        margin-bottom: 20px;
+        }
+
+
+        .cuadro span{
+            color: white;
+            border-bottom: 2px solid white;
+            font-size: 26px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .cuadro.visible {
+        transform: translateX(0);
+        opacity: 1;
+        }
+
+
+
+
+        .apariciones .imagen-caf{
+            width: 50%;
+            margin: auto auto;
+            
+
+        }
+
+        .apariciones .imagen-caf img{
+        max-width: 100%;
+        height: auto;
+        display: block; /* Para quitar espacios raros */
+
+
+        }
+
+        /*opcion 6------------------------------------------------------*/
+
+        .opcion6{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 40px;
+            background-image: url(tecno.png);
+            background-size: cover;
+            object-fit: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .opcion6 h1{
+            font-size: clamp(24px, 5vw, 48px);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .opcion6 p{
+            font-size: clamp(14px, 2.5vw, 16px);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .opcion6 .informe-gestion{
+            width: 100%;
+            height: 100%;
+            transition: 0.3s ease-in-out;
+            
+        }
+
+        .opcion6 .informe-gestion img:hover{
+            transform: scale(1.05) translateY(-10px);
+            transition: 0.3s ease-in-out;
+
+        }
+
+
+    /*Equipo container--------------------------------------------------*/
+
+        .equipo-container {
+    padding: 50px 20px;
+    background: linear-gradient(45deg, white, #e91ea2,white);
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .equipo-container h2 {
+    font-size: clamp(1.8rem, 5vw, 3.8rem);
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 0 3px 1px white;
+    margin-bottom: 40px;
+    }
+
+    .miembros {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    }
+
+    .card {
+    background-image: url(eclipse.png);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 18px;
+    border: 5px solid white;
+    box-shadow: 0 8px 16px rgb(255, 255, 255);
+    padding: 60px 20px;
+    max-width: 220px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+    .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    }
+
+    .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    }
+
+    .card p {
+    font-size: 1rem;
+    color: white;
+    }
+
+    /*footer -----------------------------------------------------------*/
+
+        footer{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;
+            background-color: #149CEA;
+            color: white;
+            padding: 12px 0;
+        }
+
+        .footer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer iframe{
+        width: 90%;
+        max-width: 500px; /* Opcional, solo si quieres limitar el tamaño grande */
+        display: block;
+        box-shadow: 10px 10px 4px #2604bf;
+        border-radius: 20px;
+        }
+
+        .reseña{
+            padding-left: 22px;
+            width: 100%;
+        }
+
+        .reseña h4{
+            font-weight: bold;
+            margin: 18px 0;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+
+        .reseña p{
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .reseña .redes-footer{
+            width: 100%;
+            height: auto;
+            gap: 30px;
+        }
+
+        .reseña .redes-footer img{
+            width: 37px;
+            margin-bottom: 20px;
+            margin-inline: 10px;
+        }
+
+        .reseña  h5{
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        .reseña .QR{
+            border-radius: 20px;
+        }
+
+
+        
+
+            @media (max-width:740px) {
+        .contenedor5 .texto {
+        margin-top: 0;
+        }
+
+        footer{
+        flex-wrap: wrap;
+        }
+    }
+
+
+
+
+    /*Esta es para la part del .informacion*/
+
+    
+    /* =================================== */
+    /* ==== RESPONSIVE: PANTALLAS MEDIAS == */
+    /* =================================== */
+    @media (max-width:1278px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        display: block;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .container .seccion1 {
+        width: 100%;
+        height: 100vh;
+        transition: 0.7s;
+        padding-left: 15px;
+        position: relative;
+        background-image: url(azulito.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 10px 50px white;
+        z-index: 1;
+    }
+
+    .container .seccion1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .container .seccion1 .info-logo p {
+        color: rgb(8, 43, 169);
+        text-shadow: 0 0 1px white;
+        font-size: 28px;
+    }
+
+    .container .seccion2{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s;
+        padding-top: 35px;
+        background-image: url(colores.png);
+        background-position: top right;
+        object-fit: cover;
+        
+    }
+    
+
+    .informacion .info1{
+        padding: 40px 0 40px 0;
+
+    }
+
+
+    }
