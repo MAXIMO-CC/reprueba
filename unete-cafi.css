@@ -1,0 +1,369 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* ============================== */
+    /* ======== HEADER GENERAL ====== */
+    /* ============================== */
+    header {
+    width: 100%;
+    height: auto;
+    padding: 17px 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 18px blue;
+    z-index: 2;
+    }
+
+    header > img {
+    width: 60px;
+    box-shadow: 0 0 20px white;
+    border-radius: 20px 12px 20px 12px;
+    }
+
+    /* ===== NAVBAR GENERAL ===== */
+    header .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+    }
+
+    .navbar a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    position: relative;
+    transition: 0.5s;
+    }
+
+    /* === EFECTO DE LINEAS === */
+    .navbar a::before,
+    .navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-bottom: 2px solid blue;
+    transition: width 0.4s ease-in-out;
+    }
+
+    .navbar a::before {
+    left: 0;
+    bottom: -5px;
+    }
+
+    .navbar a::after {
+    right: 0;
+    bottom: -10px;
+    }
+
+    .navbar a:hover::before,
+    .navbar a.active::before {
+    width: 80%;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+    width: 70%;
+    }
+
+    /* ==== REDES SOCIALES ==== */
+    .navbar .enlaces-redes .facebook:hover::after,
+    .navbar .enlaces-redes .facebook:hover::before,
+    .navbar .enlaces-redes .instagram:hover::after,
+    .navbar .enlaces-redes .instagram:hover::before {
+    border: none;
+    outline: none;
+    width: 0;
+    }
+
+    .navbar .enlaces-redes img {
+    width: 22px;
+    margin: 0 10px;
+    filter: invert(100%);
+    }
+
+    /* ====== MENÚ HAMBURGUESA ====== */
+    .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 30;
+    transition: transform 0.3s ease;
+    }
+
+    .menu-toggle span {
+    height: 3px;
+    background: #1cc9d5;
+    border-radius: 2px;
+    transition: 0.3s;
+    }
+
+    /* Estado activo del menú hamburguesa */
+    .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 7px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -8px);
+    }
+
+    /* ========== RESPONSIVE HEADER ========== */
+    @media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+        display: none;
+        box-shadow: 0 15px 15px rgba(2, 189, 246, 0.815);
+        border-radius: 0 0 20px 20px;
+        transform: translateX(400px);
+        transition: 0.7s;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar.active {
+        display: flex;
+        transform: translateX(-1px);
+    }
+
+    .navbar a {
+        width: 100%;
+        padding: 40px 10px;
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+        color: white;
+    }
+
+    .navbar.active a::before,
+    .navbar.active a::after {
+        display: none !important;
+    }
+
+    .navbar .enlaces-redes {
+        padding: 20px 0;
+    }
+    }
+
+    /*seccion1-----------------------------------------------------*/
+
+        .cont-padre {
+    width: 100%;
+    height: 100vh;
+    background-image: url(src/img/diseno-de-collage-de-personas.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* --- Contenedor del QR --- */
+.qr-container {
+    position: absolute;
+    top: 60%;
+    left: 57%;
+    width: 150px;
+    height: auto;
+    animation: aparecerQR 1s ease-in-out forwards;
+    z-index: 10;
+}
+
+.qr-container img {
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px blue;
+    transform: rotate(15deg);
+    
+}
+
+/* --- Animación --- */
+@keyframes aparecerQR {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(15deg);
+    }
+}
+
+
+/* --- Sección central --- */
+.cont-padre .seccion1 {
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 60px;
+    background-color: white;
+    position: relative;
+}
+
+.cont-padre .seccion1 .informacion h1 {
+    font-size: clamp(2.5em, 5vw, 4em);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px blue;
+    color: cyan;
+    
+}
+
+.cont-padre .seccion1 .informacion p {
+    font-size: clamp(1em, 2vw, 1.5em);
+    font-family: "Roboto Condensed", sans-serif;
+    color: black;
+    margin-top: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 770px) {
+    .qr-container {
+        top: 70%;
+        bottom: 10px;
+        left: 40%;
+        transform: translateX(-50%);
+        width: 150px;
+        animation: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+    .qr-container img{
+        transform: none;
+        margin: 50px;
+        width: 300px;
+    }
+
+@media (max-width: 480px) {
+
+    .cont-padre .seccion1 {
+        padding: 40px 20px;
+    }
+}
+
+
+/*footer -----------------------------------------------------------*/
+
+        footer{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;
+            background-color: #149CEA;
+            color: white;
+            padding: 12px 0;
+        }
+
+        .footer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer iframe{
+        width: 90%;
+        max-width: 500px; /* Opcional, solo si quieres limitar el tamaño grande */
+        display: block;
+        box-shadow: 10px 10px 4px #2604bf;
+        border-radius: 20px;
+        }
+
+        .reseña{
+            padding-left: 22px;
+            width: 100%;
+        }
+
+        .reseña h4{
+            font-weight: bold;
+            margin: 18px 0;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+
+        .reseña p{
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .reseña .redes-footer{
+            width: 100%;
+            height: auto;
+            gap: 30px;
+        }
+
+        .reseña .redes-footer img{
+            width: 37px;
+            margin-bottom: 20px;
+            margin-inline: 10px;
+        }
+
+        .reseña  h5{
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        .reseña .QR{
+            border-radius: 20px;
+        }
+
+
+        
+
+            @media (max-width:740px) {
+        .contenedor5 .texto {
+        margin-top: 0;
+        }
+
+        footer{
+        flex-wrap: wrap;
+        }
+    }
+
+
+

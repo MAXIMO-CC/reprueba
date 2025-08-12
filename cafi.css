@@ -237,7 +237,7 @@ html, body{
     justify-content: center;
     flex-direction: column;
     transition: 0.5s;
-    background-image: url(colores.png);
+    background-image: url(src/img/colores.png);
     background-position: top left;
     object-fit: cover;
     gap: 25px;
@@ -275,12 +275,113 @@ html, body{
     background: var(--color-background);
     transition: 1s;
     border-radius: 100px;
-    box-shadow: 0 0 0.2em 0 var(--color-background);
+    
     margin: 0 100px;
+    }
+
+    .btn-content1 {
+    width: 100%;
+    max-width: 350px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px 35px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 100px;
+    margin: 0 100px;
+    }
+
+    .btn-content2 {
+    width: 100%;
+    max-width: 350px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px 35px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 100px;
+    margin: 0 100px;
+    }
+
+    .btn-content3 {
+    width: 100%;
+    max-width: 350px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px 35px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 100px;
+    margin: 0 100px;
+    }
+
+    .btn-content:hover{
+        background-color: rgb(0, 176, 226);
+    }
+
+    .btn-content1:hover{
+        background-color: rgb(255, 56, 76);
+    }
+
+    .btn-content2:hover{
+      background-color: #dbd610;
+    }
+
+    .btn-content3:hover{
+        background-color: rgb(255, 255, 255);
+        color: black;
     }
 
     .btn-content:hover,
     .btn-content:focus {
+    transition: 0.5s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+    }
+
+    .btn-content1:hover,
+    .btn-content1:focus {
+    transition: 0.5s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+    }
+
+    .btn-content2:hover,
+    .btn-content2:focus {
+    transition: 0.5s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+    }
+
+    .btn-content3:hover,
+    .btn-content3:focus {
     transition: 0.5s;
     animation: btn-content 1s;
     outline: 0.1em solid transparent;
@@ -294,7 +395,37 @@ html, body{
     transform: scale(0.6);
     }
 
+    .btn-content1 .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0;
+    transform: scale(0.6);
+    }
+
+    .btn-content2 .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0;
+    transform: scale(0.6);
+    }
+
+    .btn-content3 .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0;
+    transform: scale(0.6);
+    }
+
     .btn-content:hover .icon-arrow {
+    margin-right: 25px;
+    }
+
+    .btn-content1:hover .icon-arrow {
+    margin-right: 25px;
+    }
+
+    .btn-content2:hover .icon-arrow {
+    margin-right: 25px;
+    }
+
+    .btn-content3:hover .icon-arrow {
     margin-right: 25px;
     }
 
@@ -320,12 +451,55 @@ html, body{
     animation: color_anim 1s infinite 0.2s;
     }
 
+    .btn-content1:hover #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+    }
+
+    .btn-content2:hover #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+    }
+
+    .btn-content3:hover #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+    }
+
     .btn-content:hover #arrow-icon-one {
     transform: translateX(0%);
     animation: color_anim 1s infinite 0.6s;
     }
 
     .btn-content:hover #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+    }
+
+
+    .btn-content1:hover #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+    }
+
+    .btn-content1:hover #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+    }
+
+    .btn-content2:hover #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+    }
+
+    .btn-content2:hover #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+    }
+
+    .btn-content3:hover #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+    }
+
+    .btn-content3:hover #arrow-icon-two {
     transform: translateX(0%);
     animation: color_anim 1s infinite 0.4s;
     }
@@ -350,6 +524,8 @@ html, body{
         outline-offset: 0;
     }
     }
+
+
 
 
     .informacion {
@@ -521,7 +697,7 @@ html, body{
     justify-content: center;
     gap: 30px;
     padding: 60px 20px;
-    background-image: url(abstracto.png);
+    background-image: url(src/img/abstracto.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -714,7 +890,7 @@ html, body{
             height: 100%;
             text-align: center;
             padding: 40px;
-            background-image: url(tecno.png);
+            background-image: url(src/img/tecno.png);
             background-size: cover;
             object-fit: cover;
             background-position: center center;
@@ -907,7 +1083,7 @@ html, body{
         transition: 0.7s;
         padding-left: 15px;
         position: relative;
-        background-image: url(azulito.png);
+        background-image: url(src/img/azulito.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -941,7 +1117,7 @@ html, body{
         flex-direction: column;
         transition: .5s;
         padding-top: 35px;
-        background-image: url(colores.png);
+        background-image: url(src/img/colores.png);
         background-position: top right;
         object-fit: cover;
         

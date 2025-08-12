@@ -173,12 +173,140 @@ header .navbar {
     display: none !important;
   }
 
-  .navbar .enlaces-redes {
-    padding: 20px 0 20px 0;
-  }
 }
 
 
+/* ==== BOTON FLOTANTE ==== */
+
+/* Contenedor del menú circular */
+.menu-container {
+    position: fixed; /* siempre fijo */
+    top: 50%;        /* centrado vertical */
+    right: 20px;     /* separado del borde derecho */
+    transform: translateY(40%); /* centra verticalmente */
+    width: 200px;
+    height: 200px;
+    z-index: 20;
+}
+
+/* Botón central (líneas) */
+.lineas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 25px;
+    background: #ffffffce;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 63px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    color: rgb(0, 140, 255);
+}
+
+/* Ítems del menú */
+.menu-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+/* Animación al activar */
+.menu-container.active .instagram {
+    transform: translate(-50%, -50%) translateY(-90px);
+    color: #e1306c;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.menu-container.active .instagram:hover{
+  background-color: #e1306c;
+  box-shadow:  5px 5px 2px black ;
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-container.active .facebook {
+    transform: translate(-50%, -99%) translateX(-80px);
+    color: #3b5998;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.menu-container.active .facebook:hover{
+  background-color: #3b5998;
+  box-shadow:  5px 5px 2px black ;
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-container.active .whatsapp {
+    transform: translate(-50%, -50%) translateY(110px);
+    color: #25d366;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.menu-container.active .whatsapp:hover{
+  background-color: #25d366;
+  box-shadow:  5px 5px 2px black ;
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-container.active .google {
+    transform: translate(-50%, 20%) translateX(-80px);
+    color: #db4437; 
+    font-size: 24px;
+    opacity: 1;
+}
+
+.menu-container.active .google:hover{
+  background-color: #db4437;
+  box-shadow:  5px 5px 2px black ;
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .menu-container {
+        top: 60%;
+        right: 10px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .menu-item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .lineas {
+        width: 50px;
+        height: 53px;
+        font-size: 20px;
+    }
+}
 
   /*contenido---------------------------------------------------*/
   .todo{

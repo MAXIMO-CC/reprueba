@@ -1,11 +1,11 @@
     /*menu */ 
 
-    const toggle = document.getElementById("menu-toggle");
+const toggleMain = document.getElementById("menu-toggle");
 const navbar = document.getElementById("navbar");
 
-toggle.addEventListener("click", () => {
+toggleMain.addEventListener("click", () => {
   navbar.classList.toggle("active");
-  toggle.classList.toggle("active");
+  toggleMain.classList.toggle("active");
 });
 
 
@@ -41,6 +41,20 @@ toggle.addEventListener("click", () => {
       imagen.classList.remove('visible');
     }
   });
+
+
+
+    const toggle = document.querySelector('.lineas');
+const container = document.querySelector('.menu-container');
+
+toggle.addEventListener('click', () => {
+    container.classList.toggle('active');
+});
+
+
+
+
+
 
 
 
