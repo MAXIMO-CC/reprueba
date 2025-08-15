@@ -364,237 +364,195 @@ header .navbar {
       
   }
 
-  /*donaciones---------------------------------*/
-
-  .donaciones{
-      width: 100vw;
-      height: auto;
-      background-repeat: no-repeat;
-      padding: 30px 50px;
-      
-      
-      
-  }
-
-  /*contenedor 1-------------------------------------*/
-
-  .donaciones .contenedor1{
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 50px;
-      padding: 0;
-  }
-
-      .contenedor1 img{
-      border-radius: 50px;
-      width: 100%;
-      height: auto;
-      max-width: 600px; /* Opcional, solo si quieres limitar el tamaño grande */
-      display: block;
+.donaciones{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
 }
 
-  /* animacion-boton-------------------------------------*/ 
-  .btn-conteiner {
-    display: flex;
-    justify-content: center;
-    --color-text: #ffffff;
-    --color-background: #8113ff;
-    --color-outline: #dc14ff80;
-    --color-shadow: #00000080;
-  }
-
-  .btn-content {
-    display: flex;
-    align-items: center;
-    padding: 10px 35px;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 25px;
-    color: var(--color-text);
-    background: var(--color-background);
-    transition: 1s;
-    border-radius: 100px;
-    box-shadow: 0 0 0.2em 0 var(--color-background);
-    margin: 0 100px;
-    
-  }
-
-  .btn-content:hover, .btn-content:focus {
-    transition: 0.5s;
-    -webkit-animation: btn-content 1s;
-    animation: btn-content 1s;
-    outline: 0.1em solid transparent;
-    outline-offset: 0.2em;
-    box-shadow: 0 0 0.4em 0 var(--color-background);
-  }
-
-  .btn-content .icon-arrow {
-    transition: 0.5s;
-    margin-right: 0px;
-    transform: scale(0.6);
-  }
-
-  .btn-content:hover .icon-arrow {
-    transition: 0.5s;
-    margin-right: 25px;
-  }
-
-  .icon-arrow {
-    width: 20px;
-    margin-left: 15px;
-    position: relative;
-    top: 6%;
-  }
-    
-  /* iconos----SVG */
-  #arrow-icon-one {
-    transition: 0.4s;
-    transform: translateX(-60%);
-  }
-
-  #arrow-icon-two {
-    transition: 0.5s;
-    transform: translateX(-30%);
-  }
-
-  .btn-content:hover #arrow-icon-three {
-    animation: color_anim 1s infinite 0.2s;
-  }
-
-  .btn-content:hover #arrow-icon-one {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.6s;
-  }
-
-  .btn-content:hover #arrow-icon-two {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.4s;
-  }
-
-  /* SVG animations */
-  @keyframes color_anim {
-    0% {
-      fill: white;
-    }
-
-    50% {
-      fill: var(--color-background);
-    }
-
-    100% {
-      fill: white;
-    }
-  }
-
-  /* Button animations */
-  @-webkit-keyframes btn-content {
-    0% {
-      outline: 0.2em solid var(--color-background);
-      outline-offset: 0;
-    }
-  }
-
-  @keyframes btn-content {
-    0% {
-      outline: 0.2em solid var(--color-background);
-      outline-offset: 0;
-    }
-  }
-
-
-  /*cotenedor 2------------------------------------------------*/
-
-  .contenedor2{
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row-reverse;
-      margin-bottom: 50px;
-      padding: 0;
-  }
-
-    .contenedor2 img{
-      width: 100%;
-      height: auto;
-      max-width: 600px; /* Opcional, solo si quieres limitar el tamaño grande */
-      display: block;
-      border-radius: 50px;
+.donaciones .contenedor1{
+  width: 33.3%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 20px;
 }
 
-    
+.donaciones .contenedor1 img{
+  width: 100%;
+  height: 100%;
+}
 
-  .contenedor2 .btn-content {
-    width: 260px;
-    height: 70px;
-    padding-left: 60px;
-    background-color: #8113ff;
+.donaciones .boton{
+  width: 33.3%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.donaciones .boton .pay-btn {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  color: #22c55e;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.default-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover animations */
+.pay-btn:hover .icon {
+  animation: none;
+}
+
+.pay-btn:hover .wallet-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pay-btn:hover .card-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0s;
+}
+
+.pay-btn:hover .payment-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
+.pay-btn:hover .dollar-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1s;
+}
+
+.pay-btn:hover .check-icon {
+  animation: iconRotate 2.5s infinite;
+  animation-delay: 1.5s;
+}
+
+/* Active state - show only checkmark */
+.pay-btn:active .icon {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.pay-btn:active .check-icon {
+  animation: checkmarkAppear 0.6s ease forwards;
+  visibility: visible;
+}
+
+.btn-text {
+  font-weight: 600;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+@keyframes iconRotate {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.5);
   }
-
-  .contenedor2 .btn-content:hover{
-      padding-left: 40px;
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
   }
-
-
-  /*contenedor3---------------------------------------------*/
-
-  .contenedor3{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  15% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
   }
-
-  .contenedor3 img{
-    width: 250px;
-    height: 200px;
-    margin: 0 35px;
-    transition: 0.6s;
+  20% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.5);
   }
-
-  .contenedor3 img[src$="png"]:hover{
-    transform: scale(1.1);
-    transition: 0.6s;
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.5);
   }
+}
 
-  .contenedor3 .botn{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-45deg);
   }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
 
-  /* boton.. */ 
-  .bb {
-      display: inline-block;
-      padding: 0.7em 1.4em;
-      background-color: #2604bf;
-      color: #DEDEDE;
-      text-decoration: none;
-      border: none;
-      border-radius: 0.5em;
-      font-size: 1.2em;
-      cursor: pointer;
-      text-align: center;
-      transition: 0.6s ease-in-out;
-      font-family: "Cormorant Unicase", serif;
-      font-weight: 700;
-    }
 
-    .bb:hover {
-      background-color: #1c0391;
-      color: white;
-      transition: background-color 0.3s ease;
-      transform: scale(1.1);
-      transition: 0.6s ease-in-out;
-    }
+.donaciones .contenedor2{
+  width: 33.3%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.donaciones .contenedor2 img{
+  width: 100%;
+  height: 100%;
+}
 
   /*contenedor4...........................................*/
 
