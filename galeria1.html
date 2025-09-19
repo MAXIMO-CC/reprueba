@@ -1,0 +1,79 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link rel="stylesheet" href="galeria1.css">
+            
+
+        </head>
+        <body>
+            
+            <h1>SALUDCAF</h1>
+    <div class="gallery" id="gallery">
+    <div class="gallery-item large">
+        <img src="src/SALUDCAF-20250815T210840Z-1-001/SALUDCAF/Bamicaf 2.jpg" alt="Imagen 1" />
+    </div>
+    <div class="gallery-item">
+        <img src="src/SALUDCAF-20250815T210840Z-1-001/SALUDCAF/Bamicaf 3.jpg" alt="Imagen 2" />
+    </div>
+    <div class="gallery-item tall">
+        <img src="src/SALUDCAF-20250815T210840Z-1-001/SALUDCAF/Bamicaf.jpg" alt="Imagen 3" />
+    </div>
+    <div class="gallery-item wide">
+        <img src="src/SALUDCAF-20250815T210840Z-1-001/SALUDCAF/Madres gestantes y lactantes.jpg" alt="Imagen 4" />
+    </div>
+    <div class="gallery-item">
+        <img src="src/SALUDCAF-20250815T210840Z-1-001/SALUDCAF/Recreación.jpg" alt="Imagen 5" />
+    </div>
+    
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Cerrar modal">&times;</button>
+        <img src="" alt="" id="modalImage" />
+    </div>
+    </div>
+
+
+
+    <script>
+    const gallery = document.getElementById('gallery');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    // Abrir modal con la imagen clickeada
+    gallery.addEventListener('click', e => {
+        const target = e.target;
+        if (target.tagName === 'IMG') {
+        modalImage.src = target.src;
+        modalImage.alt = target.alt;
+        modal.classList.add('open');
+        modal.focus();
+        }
+    });
+    // Cerrar modal
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('open');
+        modalImage.src = '';
+        modalImage.alt = '';
+    });
+    // Cerrar modal al hacer click fuera de la imagen
+    modal.addEventListener('click', e => {
+        if (e.target === modal) {
+        modalClose.click();
+        }
+    });
+
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+        modalClose.click();
+        }
+    });
+    </script>
+
+        </body>
+        </html>

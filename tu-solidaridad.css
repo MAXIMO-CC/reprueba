@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* ==== HEADER GENERAL ==== */
+header {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 5px 20px #1cc9d5;
+    padding: 17px 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 20;
+    background-color: white;
+}
+    header img {
+    width: 60px;
+    }
+
+    /* ==== NAVBAR GENERAL ==== */
+    header .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+    }
+
+    .navbar a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    position: relative;
+    transition: 0.5s;
+    }
+
+    /* ==== EFECTO DE LINEAS ==== */
+    .navbar a::before,
+    .navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-bottom: 2px solid rgba(24, 212, 212, 0.745);
+    transition: width 0.4s ease-in-out;
+    }
+
+    .navbar a::before {
+    left: 0;
+    bottom: -5px;
+    }
+
+    .navbar a::after {
+    right: 0;
+    bottom: -10px;
+    }
+
+    .navbar a:hover::before,
+    .navbar a.active::before {
+    width: 80%;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+    width: 70%;
+    }
+
+    /* ==== REDES SOCIALES ==== */
+    .navbar .enlaces-redes .facebook:hover::after,
+    .navbar .enlaces-redes .facebook:hover::before,
+    .navbar .enlaces-redes .instagram:hover::after,
+    .navbar .enlaces-redes .instagram:hover::before {
+    border: none;
+    outline: none;
+    width: 0;
+    }
+
+    .navbar .enlaces-redes img {
+    width: 22px;
+    margin: 0 10px;
+    }
+
+    /* Menú hamburguesa base */
+    .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 30;
+    transition: transform 0.3s ease;
+    }
+
+    .menu-toggle span {
+    height: 3px;
+    background: #1cc9d5;
+    border-radius: 2px;
+    transition: 0.3s;
+    }
+
+    /* Estado activo (menú abierto: se transforma en una X) */
+    .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 7px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -8px);
+    }
+
+
+    /* ==== RESPONSIVE (CELULAR) ==== */
+    @media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 50%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+        display: none;
+        box-shadow: 0 15px 15px rgba(2, 189, 246, 0.815);
+        border-radius: 0 0 20px 20px;
+        transform: translateX(400px);
+        transition: .7s;
+        z-index: 30;
+    }
+
+    .navbar.active {
+        display: flex;
+        transform: translateX(-1px);
+        transition: .7s;
+    }
+
+    .navbar a {
+        width: 100%;
+        padding: 40px 10px;
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* CORREGIDO: Evita que los efectos se apliquen erróneamente */
+    .navbar.active a::before,
+    .navbar.active a::after {
+        display: none !important;
+    }
+
+    }
+
+
+    /*seccion1-------------------------------*/
+
+.seccion1 {
+    width: 100%;
+    height: 100%;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 30px;
+}
+
+
+.seccion1 h1{
+    text-align: center;
+    font-size: clamp(1rem, 6rem, 5rem);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    color: black;
+    -webkit-text-stroke: 1px  white;
+    text-shadow: 5px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width:493px) {
+    .seccion1 h1{
+        font-size: 50px;
+    }
+}
+
+.seccion1 p{
+    font-size: clamp(1rem, 4rem, 1.2em);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/*seccion2---------------------------------------------------------------*/
+
+
+.seccion2{
+    width: 100%;
+    height: 100%;
+    padding: 50px 20px 50px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+        .carta {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            max-height: 700px;
+            transition: all 0.3s ease;
+            font-weight: 200;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .carta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.2);
+        }
+        .foto-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        .foto {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center center;
+            transition: transform 0.3s ease;
+        }
+
+
+        .carta:hover .foto {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+            height: 100px;
+        }
+        .contenido {
+            padding: 25px;
+        }
+        .titulo {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .descripcion {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .info-adicional {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+        .info-label {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        .info-value {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .botones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .botones a{
+            text-decoration: none;
+        }
+        .boton {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .boton:hover {
+            transform: translateY(-2px);
+        }
+        .boton-donar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .boton-donar:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4190);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .boton-chatear {
+            background: #ecf0f1;
+            color: #2c3e50;
+            border: 2px solid #bdc3c7;
+        }
+        .boton-chatear:hover {
+            background: #dfe6e9;
+            border-color: #95a5a6;
+            box-shadow: 0 5px 15px rgba(189, 195, 199, 0.3);
+        }
+        .icono {
+            font-size: 1.2rem;
+        }
+
+            @media (max-width: 480px) {
+            .carta {
+                margin: 10px;
+            }
+            
+            .foto-container {
+                height: 200px;
+            }
+            
+            .contenido {
+                padding: 20px;
+            }
+            
+            .titulo {
+                font-size: 1.3rem;
+            }
+            
+            .botones {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 350px) {
+            .boton {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+
+        /*footer--------------------------------------------------------------*/
+
+        .footer2{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;
+            background-color: #149CEA;
+            color: white;
+            padding: 12px 0;
+        }
+
+        .footer2 .footer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer iframe{
+        width: 90%;
+        max-width: 600px; /* Opcional, solo si quieres limitar el tamaño grande */
+        display: block;
+        box-shadow: 10px 10px 4px #2604bf;
+        }
+
+        .reseña{
+            padding-left: 22px;
+            width: 100%;
+        }
+
+        .reseña h4{
+            font-weight: bold;
+            margin: 18px 0;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+
+        .reseña p{
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .reseña .redes-footer{
+            width: 100%;
+            height: auto;
+            gap: 30px;
+        }
+
+        .reseña .redes-footer img{
+            width: 37px;
+            margin-bottom: 20px;
+            margin-inline: 10px;
+        }
+
+        .reseña  h5{
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+
+        
+
+            @media (max-width:740px) {
+        .contenedor5 .texto {
+        margin-top: 0;
+        }
+
+        footer{
+        flex-wrap: wrap;
+        }
+    }
+

@@ -227,11 +227,12 @@ header .navbar {
 
 /* Animación al activar */
 .menu-container.active .instagram {
-    transform: translate(-50%, -50%) translateY(-90px);
+    transform: translate(-145%, -50%) translateY(-90px);
     color: #e1306c;
     font-size: 24px;
     opacity: 1;
 }
+
 
 .menu-container.active .instagram:hover{
   background-color: #e1306c;
@@ -242,7 +243,7 @@ header .navbar {
 }
 
 .menu-container.active .facebook {
-    transform: translate(-50%, -99%) translateX(-80px);
+    transform: translate(-50%, -50%) translateX(-80px);
     color: #3b5998;
     font-size: 24px;
     opacity: 1;
@@ -257,7 +258,7 @@ header .navbar {
 }
 
 .menu-container.active .whatsapp {
-    transform: translate(-50%, -50%) translateY(110px);
+    transform: translate(-145%, -30%) translateY(80px);
     color: #25d366;
     font-size: 24px;
     opacity: 1;
@@ -271,20 +272,6 @@ header .navbar {
   cursor: pointer;
 }
 
-.menu-container.active .google {
-    transform: translate(-50%, 20%) translateX(-80px);
-    color: #db4437; 
-    font-size: 24px;
-    opacity: 1;
-}
-
-.menu-container.active .google:hover{
-  background-color: #db4437;
-  box-shadow:  5px 5px 2px black ;
-  border: 4px solid white;
-  color: white;
-  cursor: pointer;
-}
 
 
 /* Ajustes responsive */
@@ -364,44 +351,60 @@ header .navbar {
       
   }
 
-.donaciones{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-}
+  /*donaciones-------------------------------------------------------*/
 
-.donaciones .contenedor1{
-  width: 33.3%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  padding: 15px;
-  border-radius: 20px;
-}
-
-.donaciones .contenedor1 img{
+.donaciones {
   width: 100%;
   height: 100%;
+  padding: 12px;
+  margin-bottom: 50px;
+  
 }
 
-.donaciones .boton{
-  width: 33.3%;
-  height: 50vh;
+/* Contenedor imágenes */
+.contenedor1 {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  border-radius: 20px;
+  gap: 20px; /* espacio entre imágenes */
+  padding: 20px;
+  
 }
 
-.donaciones .boton .pay-btn {
-  position: relative;
+.contenedor1 img {
+  width: 60%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px gray;
+  object-fit: cover;
+
+}
+
+@media (max-width: 330px) {
+  .contenedor1 img {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Botón */
+
+.contenedor2{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor2 a{
+  text-decoration: none;
+}
+
+.donaciones .pay-btn {
   padding: 12px 24px;
   font-size: 16px;
   background: #1a1a1a;
@@ -416,7 +419,7 @@ header .navbar {
 }
 
 .pay-btn:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -442,11 +445,7 @@ header .navbar {
   visibility: visible;
 }
 
-/* Hover animations */
-.pay-btn:hover .icon {
-  animation: none;
-}
-
+/* Animaciones de íconos */
 .pay-btn:hover .wallet-icon {
   opacity: 0;
   visibility: hidden;
@@ -472,7 +471,6 @@ header .navbar {
   animation-delay: 1.5s;
 }
 
-/* Active state - show only checkmark */
 .pay-btn:active .icon {
   animation: none;
   opacity: 0;
@@ -487,12 +485,10 @@ header .navbar {
 
 .btn-text {
   font-weight: 600;
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* Keyframes */
 @keyframes iconRotate {
   0% {
     opacity: 0;
@@ -537,22 +533,18 @@ header .navbar {
 }
 
 
-.donaciones .contenedor2{
-  width: 33.3%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  padding: 15px;
-  border-radius: 20px;
+/* Responsive */
+
+@media (max-width: 870px){
+  .donaciones .contenedor1{
+    flex-direction: column;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
 }
 
-.donaciones .contenedor2 img{
-  width: 100%;
-  height: 100%;
-}
 
   /*contenedor4...........................................*/
 
@@ -642,308 +634,6 @@ header .navbar {
   transform: translate(0.1em, 0.1em);
 }
 
-      /*contenedor 5..................................*/
-
-      .contenedor5{
-        width: 100%;
-        height: auto;
-        display: flex;
-       
-    
-      }
-
-      .contenedor5 .texto{
-        width: 50%;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        font-size: 3.3em;
-        font-family: "Cormorant Unicase", serif;
-        text-shadow: 0 2px 12px black;
-        font-weight: bold;
-      }
-
-      .contenedor5 .texto h1{
-        margin-top: 70px;
-      }
-
-  @media (max-width:370px){
-        .contenedor5 .texto {
-          font-size: 2.7em;
-        }
-      }
-
-
-      .contenedor5 .texto a{
-        color: gray;
-        background-color: cyan;
-        border: 3px solid gray;
-        text-decoration: none;
-        margin-top: 100px;
-        padding: 20px 40px;
-        font-size: 0.5em;
-        border-radius: 18px ;
-        transition: .3s;
-        text-shadow: none
-      }
-
-      .contenedor5 .texto a:hover{
-        background-color: cyan;
-        border: 3px solid gray;
-        transform: skew(-8deg);
-        color: black;
-        box-shadow: 7px 13px 1px black ;
-        transition: .6s;
-        text-shadow: none
-      }
-
-      .contenedor5 .junta{
-        width: 50%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-        height: auto;
-        padding: 10px;
-      }
-
-      /*primera carta......*/
-
-      .contenedor5 .junta .primero{
-        width: 250px;
-        height: 270px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: .6s;
-        border-bottom: 4px ridge blue;
-        box-shadow: 0 10px 15px #615f5f;
-      }
-
-      .contenedor5 .junta .primero:hover{
-        border-bottom: 4px ridge cyan;
-        transform: rotate(-12deg) scale(1.1);
-        box-shadow: 0 10px 15px #615f5f;
-        transition: .6s;
-      }
-
-      .contenedor5 .junta .primero img{
-        width: 100%;
-        height: 190px;
-        margin-bottom: 20px;
-        background-position: center center;
-        background-size: cover;
-        object-fit: cover;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .contenedor5 .junta .primero p{
-        font-family: "Cormorant Unicase", serif;
-        font-weight: 800;
-        font-size: 18px;
-        text-align: center;
-        margin-inline: 10px;
-      }
-
-
-      /*segunda carta......*/
-
-      .contenedor5 .junta .segundo{
-        width: 250px;
-        height: 270px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: .6s;
-        border-bottom: 4px ridge blue;
-        box-shadow: 0 10px 15px #615f5f;
-      }
-
-      .contenedor5 .junta .segundo:hover{
-        border-bottom: 4px ridge cyan;
-       transform: rotate(12deg) scale(1.1);
-       box-shadow: 0 10px 15px #615f5f;
-       transition: .6s;
-      }
-
-      .contenedor5 .junta .segundo img{
-        width: 100%;
-        height: 190px;
-        margin-bottom: 20px;
-        background-size: cover;
-        object-fit: cover;
-        background-size: cover;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .contenedor5 .junta .segundo p{
-        font-family: "Cormorant Unicase", serif;
-        font-weight: 800;
-        font-size: 18px;
-        margin-inline: 10px;
-        text-align: center;
-      }
-
-
-      /*tercera carta......*/
-
-      .contenedor5 .junta .tercero{
-        width: 250px;
-        height: 270px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: .6s;
-        border-bottom: 4px ridge blue;
-        box-shadow: 0 10px 15px #615f5f;
-      }
-
-      .contenedor5 .junta .tercero:hover{
-        border-bottom: 4px ridge cyan;
-       transform: rotate(-12deg) scale(1.1);
-       box-shadow: 0 10px 15px #615f5f;
-       transition: .6s;
-      }
-
-      .contenedor5 .junta .tercero img{
-        width: 100%;
-        height: 190px;
-        margin-bottom: 20px;
-        background-size: cover;
-        object-fit: cover;
-        background-size: cover;
-        object-position: top center;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .contenedor5 .junta .tercero p{
-       font-family: "Cormorant Unicase", serif;
-        font-weight: 800;
-        font-size: 18px;
-        margin-inline: 10px;
-        text-align: center;
-      }
-
-      /*cuarta carta......*/
-
-      .contenedor5 .junta .cuarto{
-        width: 250px;
-        height: 270px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: .6s;
-        border-bottom: 4px ridge blue;
-        box-shadow: 0 10px 15px #615f5f;
-      }
-
-      .contenedor5 .junta .cuarto:hover{
-        border-bottom: 4px ridge cyan;
-       transform: rotate(12deg) scale(1.1);
-       box-shadow: 0 10px 15px #615f5f;
-       transition: .6s;
-      }
-
-      .contenedor5 .junta .cuarto img{
-        width: 100%;
-        height: 190px;
-        margin-bottom: 20px;
-        background-position: center center;
-        background-size: cover;
-        object-fit: cover;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .contenedor5 .junta .cuarto p{
-        font-family: "Cormorant Unicase", serif;
-        font-weight: 800;
-        font-size: 18px;
-        margin-inline: 10px;
-        text-align: center;
-      }
-      /*quinta carta......*/
-
-      .contenedor5 .junta .quinto{
-        width: 250px;
-        height: 270px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: .6s;
-        border-bottom: 4px ridge blue;
-        box-shadow: 0 10px 15px #615f5f;
-      }
-
-      .contenedor5 .junta .quinto:hover{
-        border-bottom: 4px ridge cyan;
-       transform: rotate(-12deg) scale(1.1);
-       box-shadow: 0 10px 15px #615f5f;
-       transition: .6s;
-      }
-
-      .contenedor5 .junta .quinto img{
-        width: 100%;
-        height: 190px;
-        margin-bottom: 20px;
-        background-position: center center;
-        background-size: cover;
-        object-fit: cover;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .contenedor5 .junta .quinto p{
-        font-family: "Cormorant Unicase", serif;
-        font-weight: 800;
-        font-size: 18px;
-        margin-inline: 10px;
-        text-align: center;
-      }
-      /*sexta carta......*/
-
-     .contenedor5 .junta .sexto{
-        width: 250px;
-        height: 270px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: .6s;
-        border-bottom: 4px ridge blue;
-        box-shadow: 0 10px 15px #615f5f;
-      }
-
-      .contenedor5 .junta .sexto:hover{
-        border-bottom: 4px ridge cyan;
-       transform: rotate(12deg) scale(1.1);
-       box-shadow: 0 10px 15px #615f5f;
-       transition: .6s;
-      }
-
-      .contenedor5 .junta .sexto img{
-        width: 100%;
-        height: 190px;
-        margin-bottom: 20px;
-        background-position: center center;
-        background-size: cover;
-        object-fit: cover;
-        border-radius: 20px 20px 0 0;
-      }
-
-      .contenedor5 .junta .sexto p{
-        font-family: "Cormorant Unicase", serif;
-        font-weight: 800;
-        font-size: 17px;
-        margin-inline: 10px;
-        text-align: center;
-      }
 
 
       /*contenedor6 ......................................*/
@@ -951,7 +641,7 @@ header .navbar {
       .contenedor6{
         width: 100%;
         height: auto;
-        margin-top: 100px;
+        margin-top: 50px;
         margin-bottom: 100px
         
       }
@@ -1079,35 +769,10 @@ header .navbar {
 
       @media  (max-width:1279px) {
 
-        .donaciones{
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-        }
-
-        .donaciones .contenedor1{
-          width: 100%;
-          display: block;
-          justify-content: center;
-        }
-
-        .donaciones .contenedor1 .btn-conteiner{
-          margin-top: 25px;
-        }
-
-        .donaciones .contenedor1 img{
-          margin: 0 auto;
-        }
-
         /*contenedor 2............*/
         
 
-        .donaciones .contenedor2{
-          width: 100%;
-          display: block;
-          justify-content: center;
-        }
+        
 
         .donaciones .contenedor2 .btn-conteiner{
           margin-top: 25px;

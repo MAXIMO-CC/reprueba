@@ -1,12 +1,12 @@
-    /*menu */ 
-
-const toggleMain = document.getElementById("menu-toggle");
+// --- Menú hamburguesa ---
+const menuToggle = document.getElementById("menu-toggle");
 const navbar = document.getElementById("navbar");
 
-toggleMain.addEventListener("click", () => {
-  navbar.classList.toggle("active");
-  toggleMain.classList.toggle("active");
+menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active"); 
+    navbar.classList.toggle("active"); 
 });
+
 
 
 

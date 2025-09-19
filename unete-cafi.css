@@ -22,7 +22,8 @@
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 4px 18px blue;
-    z-index: 2;
+    z-index: 20;
+    backdrop-filter: blur(10px);
     }
 
     header > img {
@@ -186,7 +187,7 @@
 
         .cont-padre {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: url(src/img/diseno-de-collage-de-personas.jpg);
     background-size: cover;
     background-position: center;
@@ -194,6 +195,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 200px 0;
 }
 
 /* --- Contenedor del QR --- */
@@ -232,11 +234,13 @@
 /* --- Sección central --- */
 .cont-padre .seccion1 {
     width: 100%;
+
     border-radius: 20px;
     text-align: center;
     padding: 60px;
     background-color: white;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .cont-padre .seccion1 .informacion h1 {
@@ -249,7 +253,7 @@
 }
 
 .cont-padre .seccion1 .informacion p {
-    font-size: clamp(1em, 2vw, 1.5em);
+    font-size: clamp(1.5em, 2vw, 1.5em);
     font-family: "Roboto Condensed", sans-serif;
     color: black;
     margin-top: 20px;
@@ -258,11 +262,11 @@
 /* --- Responsive --- */
 @media (max-width: 770px) {
     .qr-container {
-        top: 70%;
+        top: 60%;
         bottom: 10px;
-        left: 40%;
+        left: 50%;
         transform: translateX(-50%);
-        width: 150px;
+        width: 200px;
         animation: none;
         display: flex;
         align-items: center;
@@ -272,14 +276,20 @@
 
     .qr-container img{
         transform: none;
-        margin: 50px;
-        width: 300px;
+        margin-top: 90px;
+        width: 270px;
+        
     }
 
-@media (max-width: 480px) {
 
-    .cont-padre .seccion1 {
-        padding: 40px 20px;
+
+
+
+@media (max-width: 430px) {
+    .cont-padre > .qr-container >img{
+        width: 200px;
+        height: auto;
+        margin-top: 190px;
     }
 }
 
