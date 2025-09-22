@@ -152,9 +152,7 @@ body{
   background: rgba(255, 255, 255, 0.4);
 }
 
-.custom-file-upload input[type="file"] {
-  display: none;
-}
+
 
 
 

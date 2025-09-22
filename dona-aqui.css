@@ -284,6 +284,10 @@
         transition: .6s;
     }
 
+    .seccion2 .carta:nth-child(1) p{
+        margin-bottom: 95px;
+    }
+
     .seccion2 .carta:nth-child(1):hover{
         box-shadow: 0 5px 15px blue;
         transition: .6s;
@@ -292,9 +296,13 @@
     .seccion2 .carta:nth-child(2) {
         max-width: 400px;
         min-width: 250px;
-        max-height: 650px;
+        max-height: 950px;
         background: linear-gradient(60deg, #ffffff 60%, rgb(255, 157, 0));
         border-radius: 20px;
+    }
+
+    .seccion2 .carta:nth-child(2) p{
+        margin-bottom: 95px;
     }
 
     .seccion2 .carta:nth-child(2):hover{
